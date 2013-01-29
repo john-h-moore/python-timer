@@ -9,10 +9,10 @@ def timer(t):
     print "Timer set for %d minutes" %t
     print "Starting time is", datetime.datetime.now().strftime("%H:%M")
 
-    q = t/4
-    r = t
-    i = 0
-    qnum = 1
+    q = t/4 # Quarters, for quarter-interval chimes
+    r = t # Remaining time
+    i = 0 # Loop iterator
+    qnum = 1 # quarter number (1, 2, 3)
 
     while (qnum < 4):
         time.sleep(q*60)
@@ -32,6 +32,7 @@ def timer(t):
 def quarter_chime(qnum):
     i = 0
     while i < qnum:
+        # I'm using SystemExit because it sounds the best as a chime
         winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
         i += 1
         time.sleep(0.75)
