@@ -46,7 +46,7 @@ if __name__ == "__main__":
             t = int(raw_input("Timer length in minutes: "))
             break
         except ValueError:
-            # The user is an idiot
+            # The user is an idiot 
             print "You must enter a number"
 
     timer(t)
