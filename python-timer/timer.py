@@ -44,4 +44,4 @@ if __name__ == "__main__":
         except ValueError:
             print "You must enter a number"
 
-    timer(t) 
+    timer(t)
