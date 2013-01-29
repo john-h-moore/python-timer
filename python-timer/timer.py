@@ -5,6 +5,7 @@ Created on Jan 28, 2013
 '''
 import time, winsound, datetime
 
+# Timer - takes input t in minutes
 def timer(t):
     print "Timer set for %d minutes" %t
     print "Starting time is", datetime.datetime.now().strftime("%H:%M")
@@ -29,6 +30,7 @@ def timer(t):
         time.sleep(1)
         i += 1
 
+# Chime at the quarters of the countdown time - qnum is the quarter number
 def quarter_chime(qnum):
     i = 0
     while i < qnum:
@@ -40,9 +42,11 @@ def quarter_chime(qnum):
 if __name__ == "__main__":
     while True:
         try:
+            # Make sure the user is inputting an actual number for the time
             t = int(raw_input("Timer length in minutes: "))
             break
         except ValueError:
+            # The user is an idiot
             print "You must enter a number"
 
     timer(t)
